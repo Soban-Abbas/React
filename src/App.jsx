@@ -1,34 +1,8 @@
-import reactImg from './assets/react-core-concepts.png'
+
 import { Core_Concepts_Data } from './data.js'
-const dynamicData = ['Fundamental','Core','Crucial'];
-function getRandomIndex(){
-  return Math.floor(Math.random()*(2+1))
-}
-function Header(){
-  const randomWord=dynamicData[getRandomIndex()]
-  return(
-    <header>
-      <img src={reactImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {randomWord} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
+import Header from './components/Header.jsx';
+import CoreConpts from './components/CoreConpts.jsx';
 
-  )
-}
-
-function CoreConpts(props){
-  return(
-    <li id='core-concepts'>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.discription}</p>
-    </li>
-
-  )
-}
 function App() {
   return (
     <div>
