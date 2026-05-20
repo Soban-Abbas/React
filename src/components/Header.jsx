@@ -5,6 +5,7 @@ function getRandomIndex() {
     return Math.floor(Math.random() * (2 + 1))
 }
 function Header() {
+    console.log("header executing ")
     const randomWord = dynamicData[getRandomIndex()]
     return (
         <header>
