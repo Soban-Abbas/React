@@ -11,18 +11,7 @@ function App() {
     console.log(btnName+"Btn Click")
      setNewcontent(btnName);
   }
-  let content= <p>Please Select the Topic</p>
-  if(seletedContent){
-    content = <div id="tab-content">
-      <h3>{examples[seletedContent].title}</h3>
-      <p>{examples[seletedContent].description}</p>
-      <pre>
-        <code>
-          {examples[seletedContent].code}
-        </code>
-      </pre>
-    </div>
-  }
+  
   return (
     <div>
       <Header></Header>
@@ -49,7 +38,16 @@ function App() {
             <TabButton onSelect={()=> handleClick("props")}>Props</TabButton>
             <TabButton onSelect={()=> handleClick("state")}>State</TabButton>
           </menu>
-         {content}
+         {(!seletedContent)? <p>Please select the Topic</p> : null}
+          {(seletedContent) ? <div id="tab-content">
+            <h3>{examples[seletedContent].title}</h3>
+            <p>{examples[seletedContent].description}</p>
+            <pre>
+              <code>
+                {examples[seletedContent].code}
+              </code>
+            </pre>
+          </div>:null }
         </section>
         
       </main>
